@@ -5,5 +5,5 @@ resource "google_storage_bucket" "test_bucket" {
   versioning {
     enabled = true
   }
-  count = var.bucket_name ? 1 : 0
+  count = var.bucket_name == null ? 0 : 1
 }
